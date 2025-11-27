@@ -1,81 +1,161 @@
-/* Reset básico */
+/* Reset e Fonte */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* Estilo geral da página */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  padding: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-/* Container central */
+/* Container Principal com efeito Glassmorphism */
 .container {
-  max-width: 600px;
-  margin: 50px auto;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.95);
+    width: 100%;
+    max-width: 450px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    animation: fadeIn 0.8s ease-in-out;
+    margin: 20px;
 }
 
 /* Cabeçalho */
 .header {
-  background-color: #333;
-  color: white;
-  padding: 30px 20px;
-  text-align: center;
-  border-radius: 8px 8px 0 0;
+    background: #fff;
+    padding: 30px 20px 10px;
+    text-align: center;
+}
+
+.icon-header {
+    font-size: 3rem;
+    color: #764ba2;
+    margin-bottom: 10px;
 }
 
 .header h1 {
-  font-size: 1.8rem;
+    color: #333;
+    font-weight: 600;
+    font-size: 1.5rem;
 }
 
-/* Área principal */
+.subtitle {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Área de Upload */
 .main-content {
-  padding: 30px 20px;
+    padding: 20px 30px;
 }
 
-/* Card clicável do input */
-.file-label {
-  display: block;
-  padding: 30px 20px;
-  border: 2px dashed #666;
-  border-radius: 5px;
-  background: #fafafa;
-  text-align: center;
-  cursor: pointer;
+.file-input-wrapper {
+    border: 2px dashed #ccc;
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    background: #f9f9f9;
+    position: relative;
 }
 
-/* Input real oculto */
-#file {
-  display: none;
+/* Estado ativo (Drag over) */
+.file-input-wrapper.active {
+    border-color: #764ba2;
+    background: #f0ebf8;
 }
 
-/* Botão principal */
+.upload-icon {
+    font-size: 2.5rem;
+    color: #ccc;
+    margin-bottom: 15px;
+    transition: color 0.3s;
+}
+
+.file-input-wrapper.active .upload-icon {
+    color: #764ba2;
+}
+
+#fileText {
+    font-weight: 500;
+    color: #333;
+}
+
+.or-text {
+    display: block;
+    margin: 10px 0;
+    color: #999;
+    font-size: 0.8rem;
+}
+
+.file-types {
+    display: block;
+    margin-top: 15px;
+    font-size: 0.75rem;
+    color: #aaa;
+}
+
+/* Botão de Escolher Arquivo (Estilizado) */
+.btn-browse {
+    background: none;
+    border: 1px solid #764ba2;
+    color: #764ba2;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-browse:hover {
+    background: #764ba2;
+    color: white;
+}
+
+/* Botão de Converter Principal */
 .btn-convert {
-  width: 100%;
-  padding: 12px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
-  background-color: #333;
-  color: white;
-  cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .btn-convert:hover {
-  background-color: #555;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(118, 75, 162, 0.6);
+}
+
+.btn-convert i {
+    margin-right: 8px;
 }
 
 /* Rodapé */
 .footer {
-  background: #f8f8f8;
-  padding: 20px;
-  text-align: center;
-  border-top: 1px solid #e0e0e0;
-  border-radius: 0 0 8px 8px;
+    background: #f4f4f4;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* Animação */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }

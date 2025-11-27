@@ -3,53 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Document Binary Converter</title>
 
-    <!-- Importa o CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../static/style.css">
 </head>
 
 <body>
+    <div class="background-animation"></div>
+    
     <div class="container">
-
-        <!-- Cabeçalho -->
         <header class="header">
-            <h1>Document Binary Converter</h1>
-            <p class="subtitle">Converta seus documentos para formato binário</p>
+            <div class="icon-header">
+                <i class="fa-solid fa-file-binary"></i>
+            </div>
+            <h1>Binary Converter</h1>
+            <p class="subtitle">Transforme documentos em código binário num instante.</p>
         </header>
 
-        <!-- Conteúdo principal -->
         <main class="main-content">
             <div class="upload-section">
-                <h2>Enviar Arquivo</h2>
-
-                <!-- Formulário de upload -->
                 <form id="uploadForm" action="/convert" method="POST" enctype="multipart/form-data">
                     
-                    <!-- Área estilizada do input -->
-                    <div class="file-input-wrapper">
-                        <label for="file" class="file-label">
-                            <span id="fileName">Clique para selecionar o arquivo</span>
-                            <span class="file-types">Formatos suportados: PDF, DOCX, TXT</span>
-                        </label>
-
-                        <!-- Input invisível -->
-                        <input type="file" id="file" name="file" accept=".pdf,.docx,.txt" required>
+                    <div class="file-input-wrapper" id="dropArea">
+                        <input type="file" id="file" name="file" accept=".pdf,.docx,.txt" required hidden>
+                        
+                        <div class="upload-icon">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                        </div>
+                        <p id="fileText">Arraste e solte seu arquivo aqui</p>
+                        <span class="or-text">ou</span>
+                        <button type="button" class="btn-browse" onclick="document.getElementById('file').click()">
+                            Escolher Arquivo
+                        </button>
+                        <span class="file-types">Suporta: PDF, DOCX, TXT</span>
                     </div>
 
-                    <!-- Botão -->
                     <button type="submit" class="btn-convert">
-                        Converter para Binário
+                        <i class="fa-solid fa-rotate"></i> Converter Agora
                     </button>
                 </form>
             </div>
         </main>
 
-        <!-- Rodapé -->
         <footer class="footer">
-            <p>Desenvolvido por Kaiky Bruno, Isabela Donald e Maria Waleska</p>
+            <p>&copy; 2025 MKI | Kaiky Bruno, Isabela Donald e Maria Waleska</p>
         </footer>
     </div>
+
+    <script src="../static/script.js"></script>
 </body>
 </html>
