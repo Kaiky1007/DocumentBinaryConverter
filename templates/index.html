@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document Binary Converter</title>
+
+    <!-- Importa o CSS -->
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Cabeçalho -->
+        <header class="header">
+            <h1>Document Binary Converter</h1>
+            <p class="subtitle">Converta seus documentos para formato binário</p>
+        </header>
+
+        <!-- Conteúdo principal -->
+        <main class="main-content">
+            <div class="upload-section">
+                <h2>Enviar Arquivo</h2>
+
+                <!-- Formulário de upload -->
+                <form id="uploadForm" action="/convert" method="POST" enctype="multipart/form-data">
+                    
+                    <!-- Área estilizada do input -->
+                    <div class="file-input-wrapper">
+                        <label for="file" class="file-label">
+                            <span id="fileName">Clique para selecionar o arquivo</span>
+                            <span class="file-types">Formatos suportados: PDF, DOCX, TXT</span>
+                        </label>
+
+                        <!-- Input invisível -->
+                        <input type="file" id="file" name="file" accept=".pdf,.docx,.txt" required>
+                    </div>
+
+                    <!-- Botão -->
+                    <button type="submit" class="btn-convert">
+                        Converter para Binário
+                    </button>
+                </form>
+            </div>
+        </main>
+
+        <!-- Rodapé -->
+        <footer class="footer">
+            <p>Desenvolvido por Kaiky Bruno, Isabela Donald e Maria Waleska</p>
+        </footer>
+    </div>
+</body>
+</html>
