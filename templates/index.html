@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Binary Converter</title>
+    <link rel="stylesheet" href="../static/style.css">
+
+
+
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Document Binary Converter</h1>
+            <p class="subtitle">Converta seus documentos para formato binário</p>
+        </header>
+
+        <main class="main-content">
+            <div class="upload-section">
+                <h2>Enviar Arquivo</h2>
+                <form id="uploadForm" action="/convert" method="POST" enctype="multipart/form-data">
+                    <div class="file-input-wrapper">
+                        <label for="file" class="file-label">
+                            <span id="fileName">Clique para selecionar o arquivo</span>
+                            <span class="file-types">Formatos suportados: PDF, DOCX, TXT</span>
+                        </label>
+                        <input type="file" id="file" name="file" accept=".pdf,.docx,.txt" required>
+                    </div>
+
+                    <button type="submit" class="btn-convert">
+                        Converter para Binário
+                    </button>
+                </form>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Desenvolvido por Kaiky Bruno, Isabela Donald e Maria Waleska</p>
+            <p class="tech-info">Flask • PyPDF2 • python-docx • reportlab</p>
+        </footer>
+    </div>
+
+</body>
+</html>
